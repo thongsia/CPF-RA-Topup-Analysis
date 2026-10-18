@@ -23,7 +23,7 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 | Top-up value at Year 10 | **$118,419.54** | $99,890.81 + $10,539.03 outside |
 | **Total value** | **$118,419.54** | **$110,429.84** |
 
-**Option 1 (lump sum) wins at every income level, by $7,989.70.** The original "Option 2 wins at high brackets" result only survives when the member has substantial room below FRS.
+**Option 1 (lump sum) wins at every income level, by $7,989.70.** The balance gap is income-independent; only the tax side varies with the member's position relative to FRS.
 
 ## Decision Rule: Two Dimensions
 

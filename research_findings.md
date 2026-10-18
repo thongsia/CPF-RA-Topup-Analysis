@@ -70,10 +70,6 @@
 
 ## 4. CPF Retirement Account (RA) Cap
 
-### ⚠️ Clarification: The "$300,000" figure is outdated
-
-The user's reference to a $300,000 lifetime cap for the RA is **not the current cap**. The relevant caps are:
-
 ### Current Retirement Sums (for members turning 55 in 2026)
 
 | Sum | Amount |
@@ -85,7 +81,6 @@ The user's reference to a $300,000 lifetime cap for the RA is **not the current 
 - The **ERS is the maximum amount** a member aged 55+ can top up their RA to
 - ERS increases every January (was $426,000 in 2025; now $440,800 in 2026)
 - From 1 Jan 2025, the ERS was raised from **3× BRS to 4× BRS**
-- Before the 2025 change, the ERS was ~$308,700–$319,500 (closer to the $300K figure)
 
 ### Historical ERS context
 - Pre-2025 ERS: 3× BRS (~$308,700 for 2024)
