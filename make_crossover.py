@@ -75,7 +75,7 @@ def main():
              label=f"Option 2 net (${args.annual:,.0f}/yr)")
     ax1.set_xlabel("Chargeable Income (SGD, thousands)")
     ax1.set_ylabel("Net Benefit (SGD)")
-    ax1.set_title(f"Scenario: existing RA ${args.ra_balance:,.0f} "
+    ax1.set_title(f"(a) Scenario: existing RA ${args.ra_balance:,.0f} "
                   f"(headroom to FRS ${headroom:,.0f})")
     ax1.legend(fontsize=9)
     ax1.grid(alpha=0.3)
@@ -123,11 +123,15 @@ def main():
     ax2.set_xlim(0, 80)
     ax2.set_xlabel("FRS Headroom = FRS − existing RA (SGD, thousands)")
     ax2.set_ylabel("Crossover Income (SGD, thousands)")
-    ax2.set_title("Decision threshold vs existing RA balance")
+    ax2.set_title("(b) Decision threshold vs existing RA balance")
     ax2.legend(fontsize=9, loc="upper left")
     ax2.grid(alpha=0.3)
 
-    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    fig.tight_layout(rect=[0, 0.05, 1, 0.95])
+    fig.text(0.5, 0.012,
+             "Figure 1 — (a) Net benefit vs chargeable income for the chosen "
+             "scenario. (b) Crossover income vs FRS headroom.",
+             ha="center", fontsize=9)
     fig.savefig(args.out, dpi=150)
     print(f"Chart written -> {args.out}")
 

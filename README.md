@@ -23,11 +23,11 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 | Top-up value at Year 10 | **$118,419.54** | $99,890.81 + $10,539.03 outside |
 | **Total value** | **$118,419.54** | **$110,429.84** |
 
-**Option 1 (lump sum) wins at every income level, by $7,989.70.** The balance gap is income-independent; only the tax side varies with the member's position relative to FRS.
+**Option 1 (lump sum) wins at every income level, by $7,989.70.** The balance gap is income-independent; only the tax side varies with the member's position relative to FRS (Figure 1, panel (a), shows this scenario's net-benefit curves).
 
 ## Decision Rule: Two Dimensions
 
-The winner depends on (a) existing RA balance relative to FRS and (b) marginal tax bracket:
+The winner depends on two things: the existing RA balance relative to FRS, and the marginal tax bracket (Figure 1, panel (b), maps this rule; panel (a) plots the net-benefit curves for the default scenario):
 
 | Headroom to FRS (G = FRS − RA) | RA Balance (2026 FRS $220,400) | Result |
 |---|---|---|
@@ -40,7 +40,7 @@ The winner depends on (a) existing RA balance relative to FRS and (b) marginal t
 
 Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-up itself, which widens Option 1's balance gap (e.g. with a $40,000 existing balance the gap grows to ~$8,700 and the crossover moves to ~$87,750).
 
-![Crossover](crossover.png)
+![Figure 1 — (a) Net benefit vs chargeable income for the default scenario (RA at FRS); (b) crossover income vs FRS headroom](crossover.png)
 
 ## Usage
 
@@ -72,7 +72,7 @@ Other flags: `--frs`, `--ers`, `--lump`, `--annual`, `--years`, `--start-age`, `
 - [`cpf_ra_comparison.py`](cpf_ra_comparison.py) — analysis script (stdlib only, self-verifying)
 - [`make_crossover.py`](make_crossover.py) — chart generator (matplotlib)
 - [`cpf_ra_comparison_report.md`](cpf_ra_comparison_report.md) — full report with tables
-- [`crossover.png`](crossover.png) — crossover charts
+- [`crossover.png`](crossover.png) — Figure 1: net-benefit curves (panel a) and decision threshold vs FRS headroom (panel b)
 - [`research_findings.md`](research_findings.md) — IRAS/CPF source research
 
 ## Sources

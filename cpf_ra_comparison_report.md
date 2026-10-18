@@ -122,7 +122,7 @@ Net benefit = final value (RA total + outside pot) + total tax savings.
 
 ## 7. Sensitivity: Crossover by FRS Headroom
 
-How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief).
+How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Figure `crossover.png` visualizes this section: panel (a) plots the net benefit of each option against chargeable income for the chosen scenario; panel (b) plots the crossover thresholds below as a function of FRS headroom.
 
 | Headroom G | RA Balance | Opt 1 Final | Opt 2 Total | Balance Gap (1−2) | Opt 2 Relief Years | Crossover Income |
 |------------|------------|-------------|-------------|-------------------|--------------------|------------------|

@@ -528,7 +528,11 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity):
 
     lines.append("## 7. Sensitivity: Crossover by FRS Headroom\n")
     lines.append("How the winner changes with existing RA balance "
-                 "(headroom G = FRS − RA, i.e. how much further top-up still attracts relief).\n")
+                 "(headroom G = FRS − RA, i.e. how much further top-up still attracts relief). "
+                 "Figure `crossover.png` visualizes this section: panel (a) plots the "
+                 "net benefit of each option against chargeable income for the chosen "
+                 "scenario; panel (b) plots the crossover thresholds below as a function "
+                 "of FRS headroom.\n")
     lines.append("| Headroom G | RA Balance | Opt 1 Final | Opt 2 Total | Balance Gap (1−2) | Opt 2 Relief Years | Crossover Income |")
     lines.append("|------------|------------|-------------|-------------|-------------------|--------------------|------------------|")
     for row in sensitivity:
