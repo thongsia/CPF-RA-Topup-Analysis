@@ -102,7 +102,7 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 
 ## 6. Per-Bracket Comparison (chosen scenario)
 
-Net benefit = final value (RA total + outside pot) + total tax savings.
+Net benefit = final value (RA total + outside pot) + total tax savings. Figure `net_benefit.png` (Figure 1 in the README) plots these net-benefit curves by chargeable income.
 
 | Chargeable Income | Marginal Rate | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |
 |-------------------|--------------|-------------|-------------------|-----------|-------------|-------------------|-----------|------------------|--------|
@@ -122,7 +122,7 @@ Net benefit = final value (RA total + outside pot) + total tax savings.
 
 ## 7. Sensitivity: Crossover by FRS Headroom
 
-How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Figure `crossover.png` visualizes this section: panel (a) plots the net benefit of each option against chargeable income for the chosen scenario; panel (b) plots the crossover thresholds below as a function of FRS headroom.
+How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Figure `crossover_by_headroom.png` (Figure 2 in the README) plots the break-even chargeable income from the table below as a function of FRS headroom.
 
 | Headroom G | RA Balance | Opt 1 Final | Opt 2 Total | Balance Gap (1−2) | Opt 2 Relief Years | Crossover Income |
 |------------|------------|-------------|-------------|-------------------|--------------------|------------------|
