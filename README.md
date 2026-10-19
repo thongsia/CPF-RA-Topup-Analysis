@@ -1,5 +1,7 @@
 # CPF RA Top-Up Analysis
 
+_Disclaimer: This analysis was prompted by a human, then initially designed and carried out by an AI agent (Hermes + Qwen3.8-27B + [AIOS skillset](https://github.com/thongsia/aios)), and finally shaped and edited collaboratively between the two._
+
 A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over the next 10 years. Two ways to do it: one **$80,000 lump sum**, or **$8,000 a year**. Which is better? This repo answers that under the current IRAS/CPF rules, including the two that dominate the answer:
 
 1. **FRS-capped tax relief** — CPF Cash Top-up Relief (max $8,000/YA) is only granted for the portion of a top-up that fills the RA up to the Full Retirement Sum (FRS, $220,400 in 2026). Top-ups above FRS (up to ERS $440,800) earn interest but no relief.
