@@ -6,9 +6,11 @@
 
 **Option 1 (the $80,000 lump sum) wins at every income level, ahead by $7,989.70.** The RA is already at the FRS, so neither top-up earns tax relief and the decision is pure interest: the lump sum compounds at 4% for the full 10 years, while Option 2's $8,000 is split each year between the RA and an outside pot earning 2.5%. The result holds for any outside rate below 4.00% (§8).
 
-Full reasoning: year-by-year balances (§5), per-bracket net benefit (§7, Figure 1), and the two-dimensional decision rule (§8, Figure 2).
+Full reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit (§7, Table 6, Figure 1), and the two-dimensional decision rule (§8, Tables 7–8, Figure 2).
 
 ## 2. Assumptions
+
+**Table 1: Assumptions**
 
 | # | Assumption | Details |
 |---|-----------|---------|
@@ -24,6 +26,8 @@ Full reasoning: year-by-year balances (§5), per-bracket net benefit (§7, Figur
 
 ## 3. Data Sources
 
+**Table 2: Data sources**
+
 | Source | URL |
 |--------|-----|
 | IRAS Individual Income Tax Rates | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates |
@@ -31,6 +35,8 @@ Full reasoning: year-by-year balances (§5), per-bracket net benefit (§7, Figur
 | CPF Board RA top-ups (ERS cap, additional interest) | https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts |
 
 ## 4. Singapore Progressive Income Tax Brackets (YA 2024 onwards)
+
+**Table 3: Tax brackets**
 
 | Income Band (SGD) | Rate |
 |-------------------|------|
@@ -50,9 +56,11 @@ Full reasoning: year-by-year balances (§5), per-bracket net benefit (§7, Figur
 
 ## 5. Year-by-Year Balance Comparison
 
-RA totals include the existing balance; 'top-up value' is the part attributable to the new funds.
+RA totals include the existing balance; 'top-up value' is the part attributable to the new funds (Tables 4 and 5).
 
 ### Option 1: $80,000 lump sum (Year 1)
+
+**Table 4: Option 1 — $80,000 lump sum, year by year**
 
 | Year | Age | Deposit | Interest | RA Total | Top-up Value |
 |------|-----|---------|----------|----------|--------------|
@@ -68,6 +76,8 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 | 10 | 64 | $0.00 | $18,383.50 | $455,470.88 | $118,419.54 |
 
 ### Option 2: $8,000/year for 10 years (unused funds earn 2.5%)
+
+**Table 5: Option 2 — $8,000/year, year by year**
 
 | Year | Age | Deposit | RA Total | Outside Pot | Total Value |
 |------|-----|---------|----------|-------------|-------------|
@@ -108,7 +118,11 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 
 ## 7. Per-Bracket Comparison (chosen scenario)
 
-Net benefit = final value (RA total + outside pot) + total tax savings. Figure `net_benefit.png` (Figure 1 in the README) plots these net-benefit curves by chargeable income.
+Net benefit = final value (RA total + outside pot) + total tax savings (Table 6). Figure 1 (`net_benefit.png`, also in the README) plots the net-benefit curves by chargeable income.
+
+![Figure 1 — net benefit by chargeable income, chosen scenario (existing RA at FRS)](net_benefit.png)
+
+**Table 6: Net benefit by chargeable income**
 
 | Chargeable Income | Marginal Rate | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |
 |-------------------|--------------|-------------|-------------------|-----------|-------------|-------------------|-----------|------------------|--------|
@@ -128,7 +142,9 @@ Net benefit = final value (RA total + outside pot) + total tax savings. Figure `
 
 ## 8. Sensitivity: Crossover by FRS Headroom
 
-How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Figure `crossover_by_headroom.png` (Figure 2 in the README) plots the break-even chargeable income from the table below as a function of FRS headroom.
+How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Table 7 lists the break-even by headroom; Figure 2 (`crossover_by_headroom.png`, also in the README) plots it as a function of FRS headroom.
+
+**Table 7: Break-even chargeable income by FRS headroom**
 
 | Headroom G | RA Balance | Opt 1 Final | Opt 2 Total | Balance Gap (1−2) | Opt 2 Relief Years | Crossover Income |
 |------------|------------|-------------|-------------|-------------------|--------------------|------------------|
@@ -144,9 +160,14 @@ How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. h
 | $72,000 | $148,400 | $348,893.29 | $340,903.59 | $7,989.70 | 9/10 | Option 2 wins above $122,249 |
 | $80,000 | $140,400 | $337,051.34 | $329,061.64 | $7,989.70 | 10/10 | Option 2 wins above $87,283 |
 
+![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
+
+
 ### Crossover by Outside Rate (chosen scenario)
 
 The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2's unused funds). Option 1 is unaffected by that rate, so the gap shrinks as the assumed outside rate rises:
+
+**Table 8: Break-even by outside rate (chosen scenario)**
 
 | Outside rate | Opt 2 Total | Balance Gap (1−2) |
 |--------------|-------------|-------------------|
@@ -168,7 +189,7 @@ The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2'
 **General decision rule (age-55 member, YA 2024+ brackets):**
 
 1. RA at or above FRS (the standard position for most 55-year-olds): the lump sum wins outright — no relief on either option, and the full amount compounds from Year 1.
-2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See the table in section 8.
+2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8).
 3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their tax relief (IRAS, from YA 2026); the $2,000/yr matching grant usually beats the relief it displaces.
 
 *Caveats: constant income over the horizon; no discounting; the outside rate is an assumption, not a guarantee, while the CPF 4% base is a floor; the $80,000 total personal tax-relief cap is ignored; top-ups are irreversible.*

@@ -538,10 +538,12 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
             f"~${cross_income:,.0f}; Option 2 (${cfg['annual']:,.0f}/yr) wins above it.** "
             f"The lump sum holds a ${gap:,.2f} balance lead, but Option 2's {relief_years2} "
             f"years of FRS-capped tax relief outweigh it at higher marginal rates.")
-    lines.append("\nFull reasoning: year-by-year balances (§5), per-bracket net benefit "
-                 "(§7, Figure 1), and the two-dimensional decision rule (§8, Figure 2).\n")
+    lines.append("\nFull reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit "
+                 "(§7, Table 6, Figure 1), and the two-dimensional decision rule "
+                 "(§8, Tables 7–8, Figure 2).\n")
 
     lines.append("## 2. Assumptions\n")
+    lines.append("**Table 1: Assumptions**\n")
     lines.append("| # | Assumption | Details |")
     lines.append("|---|-----------|---------|")
     lines.append(f"| 1 | Existing RA balance | ${ra:,.0f} |")
@@ -559,6 +561,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 3. Data Sources\n")
+    lines.append("**Table 2: Data sources**\n")
     lines.append("| Source | URL |")
     lines.append("|--------|-----|")
     lines.append("| IRAS Individual Income Tax Rates | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates |")
@@ -567,6 +570,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 4. Singapore Progressive Income Tax Brackets (YA 2024 onwards)\n")
+    lines.append("**Table 3: Tax brackets**\n")
     lines.append("| Income Band (SGD) | Rate |")
     lines.append("|-------------------|------|")
     for lower, upper, rate in TAX_BRACKETS:
@@ -575,8 +579,10 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 5. Year-by-Year Balance Comparison\n")
-    lines.append("RA totals include the existing balance; 'top-up value' is the part attributable to the new funds.\n")
+    lines.append("RA totals include the existing balance; 'top-up value' is the part "
+                 "attributable to the new funds (Tables 4 and 5).\n")
     lines.append(f"### Option 1: ${cfg['lump']:,.0f} lump sum (Year 1)\n")
+    lines.append(f"**Table 4: Option 1 — ${cfg['lump']:,.0f} lump sum, year by year**\n")
     lines.append("| Year | Age | Deposit | Interest | RA Total | Top-up Value |")
     lines.append("|------|-----|---------|----------|----------|--------------|")
     for row in opt1:
@@ -585,6 +591,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
     lines.append(f"### Option 2: ${cfg['annual']:,.0f}/year for {cfg['years']} years "
                  f"(unused funds earn {cfg['outside_rate'] * 100:.1f}%)\n")
+    lines.append(f"**Table 5: Option 2 — ${cfg['annual']:,.0f}/year, year by year**\n")
     lines.append("| Year | Age | Deposit | RA Total | Outside Pot | Total Value |")
     lines.append("|------|-----|---------|----------|-------------|-------------|")
     for row in opt2:
@@ -598,9 +605,12 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 7. Per-Bracket Comparison (chosen scenario)\n")
-    lines.append("Net benefit = final value (RA total + outside pot) + total tax savings. "
-                 "Figure `net_benefit.png` (Figure 1 in the README) plots these "
+    lines.append("Net benefit = final value (RA total + outside pot) + total tax savings "
+                 "(Table 6). Figure 1 (`net_benefit.png`, also in the README) plots the "
                  "net-benefit curves by chargeable income.\n")
+    lines.append("![Figure 1 — net benefit by chargeable income, chosen scenario "
+                 "(existing RA at FRS)](net_benefit.png)\n")
+    lines.append("**Table 6: Net benefit by chargeable income**\n")
     lines.append("| Chargeable Income | Marginal Rate | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | "
                  "Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |")
     lines.append("|-------------------|--------------|-------------|-------------------|-----------|"
@@ -617,9 +627,10 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("## 8. Sensitivity: Crossover by FRS Headroom\n")
     lines.append("How the winner changes with existing RA balance "
                  "(headroom G = FRS − RA, i.e. how much further top-up still attracts relief). "
-                 "Figure `crossover_by_headroom.png` (Figure 2 in the README) plots the "
-                 "break-even chargeable income from the table below as a function of "
-                 "FRS headroom.\n")
+                 "Table 7 lists the break-even by headroom; Figure 2 "
+                 "(`crossover_by_headroom.png`, also in the README) plots it as a function "
+                 "of FRS headroom.\n")
+    lines.append("**Table 7: Break-even chargeable income by FRS headroom**\n")
     lines.append("| Headroom G | RA Balance | Opt 1 Final | Opt 2 Total | Balance Gap (1−2) | Opt 2 Relief Years | Crossover Income |")
     lines.append("|------------|------------|-------------|-------------|-------------------|--------------------|------------------|")
     for row in sensitivity:
@@ -630,6 +641,10 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                      f"${row['opt1_final']:,.2f} | ${row['opt2_total']:,.2f} | "
                      f"${row['balance_gap']:,.2f} | {row['relief_years_opt2']}/{cfg['years']} | {cross} |")
     lines.append("")
+    lines.append("![Figure 2 — break-even chargeable income by FRS headroom; the shaded "
+                 "region is where Option 1 wins at all incomes]"
+                 "(crossover_by_headroom.png)\n")
+    lines.append("")
 
     if rate_rows is not None:
         lines.append("### Crossover by Outside Rate (chosen scenario)\n")
@@ -637,6 +652,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                      f"({cfg['outside_rate'] * 100:.1f}% p.a. on Option 2's unused funds). "
                      f"Option 1 is unaffected by that rate, so the gap shrinks as the "
                      f"assumed outside rate rises:\n")
+        lines.append("**Table 8: Break-even by outside rate (chosen scenario)**\n")
         lines.append("| Outside rate | Opt 2 Total | Balance Gap (1−2) |")
         lines.append("|--------------|-------------|-------------------|")
         for row in rate_rows:
@@ -676,7 +692,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("1. RA at or above FRS (the standard position for most 55-year-olds): the lump sum "
                  "wins outright — no relief on either option, and the full amount compounds from Year 1.")
     lines.append("2. RA below FRS: annual top-ups only become competitive at high marginal brackets, "
-                 "and only if enough of the 10 years of $8,000 relief stay below FRS. See the table in section 8.")
+                 "and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8).")
     lines.append("3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their "
                  "tax relief (IRAS, from YA 2026); the $2,000/yr matching grant usually beats the "
                  "relief it displaces.")
