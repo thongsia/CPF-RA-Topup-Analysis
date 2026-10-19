@@ -22,7 +22,7 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 ## 3. Key Results
 
-### Key Result 1 — RA at FRS on day one (default scenario)
+### Key Result 1 — RA at FRS on day one
 
 Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS):
 
@@ -38,7 +38,7 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 *Robustness:* the gap above assumes the unused funds earn 2.5%; the options are exactly equal once the outside rate reaches **4.00%** — the rate the top-up itself earns in the RA — so the lump-sum conclusion holds for any outside rate below it (full sweep: report §8).
 
-![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, default scenario (existing RA at FRS)](net_benefit.png)
+![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, existing RA at FRS](net_benefit.png)
 
 ### Key Result 2 — RA below FRS
 
