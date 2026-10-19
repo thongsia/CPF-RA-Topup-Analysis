@@ -2,7 +2,13 @@
 
 *Scenario: existing RA balance $220,400 (FRS $220,400, headroom to FRS $0)*
 
-## 1. Assumptions
+## 1. Short Answer
+
+**Option 1 (the $80,000 lump sum) wins at every income level, ahead by $7,989.70.** The RA is already at the FRS, so neither top-up earns tax relief and the decision is pure interest: the lump sum compounds at 4% for the full 10 years, while Option 2's $8,000 is split each year between the RA and an outside pot earning 2.5%. The result holds for any outside rate below 4.00% (§8).
+
+Full reasoning: year-by-year balances (§5), per-bracket net benefit (§7, Figure 1), and the two-dimensional decision rule (§8, Figure 2).
+
+## 2. Assumptions
 
 | # | Assumption | Details |
 |---|-----------|---------|
@@ -16,7 +22,7 @@
 | 8 | Chargeable income | Constant across all 10 years |
 | 9 | Starting age | 55 |
 
-## 2. Data Sources
+## 3. Data Sources
 
 | Source | URL |
 |--------|-----|
@@ -24,7 +30,7 @@
 | IRAS CPF Cash Top-up Relief (incl. FRS limit on relief) | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief |
 | CPF Board RA top-ups (ERS cap, additional interest) | https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts |
 
-## 3. Singapore Progressive Income Tax Brackets (YA 2024 onwards)
+## 4. Singapore Progressive Income Tax Brackets (YA 2024 onwards)
 
 | Income Band (SGD) | Rate |
 |-------------------|------|
@@ -42,7 +48,7 @@
 | $500,000 – $1,000,000 | 23.0% |
 | $1,000,000 and above | 24.0% |
 
-## 4. Year-by-Year Balance Comparison
+## 5. Year-by-Year Balance Comparison
 
 RA totals include the existing balance; 'top-up value' is the part attributable to the new funds.
 
@@ -76,7 +82,7 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 | 9 | 63 | $8,000.00 | $411,271.30 | $18,281.98 | $429,553.28 |
 | 10 | 64 | $8,000.00 | $436,942.15 | $10,539.03 | $447,481.18 |
 
-## 5. Verification
+## 6. Verification
 
 - PASS: tax($20,000) == $0.00 — got $0.00
 - PASS: tax($30,000) == $200.00 — got $200.00
@@ -100,7 +106,7 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 - PASS: Option 1 tiered bucket cross-check — sim $455,470.88 vs buckets $455,470.88
 - PASS: Option 2 tiered bucket cross-check — sim $436,942.15 vs buckets $436,942.15
 
-## 6. Per-Bracket Comparison (chosen scenario)
+## 7. Per-Bracket Comparison (chosen scenario)
 
 Net benefit = final value (RA total + outside pot) + total tax savings. Figure `net_benefit.png` (Figure 1 in the README) plots these net-benefit curves by chargeable income.
 
@@ -120,7 +126,7 @@ Net benefit = final value (RA total + outside pot) + total tax savings. Figure `
 | $1,000,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
 | $1,500,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
 
-## 7. Sensitivity: Crossover by FRS Headroom
+## 8. Sensitivity: Crossover by FRS Headroom
 
 How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Figure `crossover_by_headroom.png` (Figure 2 in the README) plots the break-even chargeable income from the table below as a function of FRS headroom.
 
@@ -155,14 +161,14 @@ The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2'
 **Crossover:** Option 2 overtakes Option 1 once the outside rate reaches **4.00%** — in the default scenario that is exactly the 4% rate the top-up itself earns in the RA, so the lump-sum result is robust to any outside rate below it (Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base).
 
 
-## 8. Conclusion
+## 9. Conclusion
 
 **Scenario result:** Existing RA balance is at/above FRS, so **no tax relief attaches to either option**. Option 1 (lump sum) wins at **every income level**, ahead by **$7,989.70**.
 
 **General decision rule (age-55 member, YA 2024+ brackets):**
 
 1. RA at or above FRS (the standard position for most 55-year-olds): the lump sum wins outright — no relief on either option, and the full amount compounds from Year 1.
-2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See the table in section 7.
+2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See the table in section 8.
 3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their tax relief (IRAS, from YA 2026); the $2,000/yr matching grant usually beats the relief it displaces.
 
 *Caveats: constant income over the horizon; no discounting; the outside rate is an assumption, not a guarantee, while the CPF 4% base is a floor; the $80,000 total personal tax-relief cap is ignored; top-ups are irreversible.*

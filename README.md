@@ -48,7 +48,7 @@ Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-
 
 - FRS $220,400 / ERS $440,800 (members turning 55 in 2026)
 - CPF Cash Top-up Relief: $8,000/YA cap for self top-up; **cannot be carried forward**; FRS-capped
-- Outside interest rate (Option 2 unused funds): 2.5% p.a. (assumption, not a guarantee — the CPF 4% base is a floor). The lump-sum result is robust to any outside rate below 4.00%, the rate the top-up itself earns in the RA (report §7)
+- Outside interest rate (Option 2 unused funds): 2.5% p.a. (assumption, not a guarantee — the CPF 4% base is a floor). The lump-sum result is robust to any outside rate below 4.00%, the rate the top-up itself earns in the RA (report §8)
 - Chargeable income constant across all 10 years
 - No discounting (nominal comparison)
 - Singapore progressive tax brackets (YA 2024 onwards)
