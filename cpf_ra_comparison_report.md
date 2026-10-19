@@ -138,6 +138,23 @@ How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. h
 | $72,000 | $148,400 | $348,893.29 | $340,903.59 | $7,989.70 | 9/10 | Option 2 wins above $122,249 |
 | $80,000 | $140,400 | $337,051.34 | $329,061.64 | $7,989.70 | 10/10 | Option 2 wins above $87,283 |
 
+### Crossover by Outside Rate (chosen scenario)
+
+The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2's unused funds). Option 1 is unaffected by that rate, so the gap shrinks as the assumed outside rate rises:
+
+| Outside rate | Opt 2 Total | Balance Gap (1−2) |
+|--------------|-------------|-------------------|
+| 0.0% | $436,942.15 | $18,528.73 |
+| 1.0% | $440,777.24 | $14,693.64 |
+| 2.0% | $445,111.98 | $10,358.90 |
+| 2.5% | $447,481.18 | $7,989.70 |
+| 3.0% | $449,993.09 | $5,477.79 |
+| 4.0% | $455,470.88 | $0.00 |
+| 5.0% | $461,599.42 | $-6,128.54 |
+
+**Crossover:** Option 2 overtakes Option 1 once the outside rate reaches **4.00%** — in the default scenario that is exactly the 4% rate the top-up itself earns in the RA, so the lump-sum result is robust to any outside rate below it (Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base).
+
+
 ## 8. Conclusion
 
 **Scenario result:** Existing RA balance is at/above FRS, so **no tax relief attaches to either option**. Option 1 (lump sum) wins at **every income level**, ahead by **$7,989.70**.

@@ -452,10 +452,53 @@ def headroom_sensitivity(lump, annual, years, frs, ra_balance, outside_rate,
     return rows
 
 
+def outside_rate_sensitivity(existing, lump, annual, years, tiers=None,
+                             starting_age=55,
+                             rates=(0.0, 0.01, 0.02, 0.025, 0.03, 0.04, 0.05),
+                             search_hi=0.20, tol=1e-6):
+    """Option 2's total value for several assumed outside rates, plus the
+    exact outside rate at which the two options tie (bisection).
+
+    The gap is monotonically decreasing in the outside rate: higher outside
+    rates grow Option 2's parked funds while Option 1 is unaffected.  Returns
+    (rows, crossover) where crossover is None if Option 2 never catches up
+    below search_hi.
+    """
+    opt1_final = simulate_option1(existing, lump, years,
+                                  starting_age, tiers=tiers)[-1]["ra_total"]
+
+    def opt2_total(r):
+        return simulate_option2(existing, annual, years, r,
+                                starting_age, tiers=tiers)[-1]["total_value"]
+
+    def gap(r):
+        return opt1_final - opt2_total(r)
+
+    rows = [{"outside_rate": r, "opt2_total": opt2_total(r),
+             "balance_gap": round(opt1_final - opt2_total(r), 2)}
+            for r in rates]
+
+    crossover = None
+    if gap(search_hi) <= 0:  # Option 2 catches up inside the search range
+        if gap(0.0) <= 0:
+            crossover = 0.0
+        else:
+            lo, hi = 0.0, search_hi
+            while hi - lo > tol:
+                mid = (lo + hi) / 2
+                if gap(mid) > 0:
+                    lo = mid
+                else:
+                    hi = mid
+            crossover = (lo + hi) / 2
+    return rows, crossover
+
+
 # ==============================================================================
 # Report
 # ==============================================================================
-def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity):
+def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
+                    rate_rows=None, rate_crossover=None):
     frs = cfg["frs"]
     ra = cfg["ra_balance"]
     headroom = frs_headroom(ra, frs)
@@ -552,6 +595,32 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity):
         lines.append(f"| ${row['headroom']:,.0f} | ${row['ra_balance']:,.0f} | "
                      f"${row['opt1_final']:,.2f} | ${row['opt2_total']:,.2f} | "
                      f"${row['balance_gap']:,.2f} | {row['relief_years_opt2']}/{cfg['years']} | {cross} |")
+    lines.append("")
+
+    if rate_rows is not None:
+        lines.append("### Crossover by Outside Rate (chosen scenario)\n")
+        lines.append(f"The balance gap above assumes the simulated outside rate "
+                     f"({cfg['outside_rate'] * 100:.1f}% p.a. on Option 2's unused funds). "
+                     f"Option 1 is unaffected by that rate, so the gap shrinks as the "
+                     f"assumed outside rate rises:\n")
+        lines.append("| Outside rate | Opt 2 Total | Balance Gap (1−2) |")
+        lines.append("|--------------|-------------|-------------------|")
+        for row in rate_rows:
+            lines.append(f"| {row['outside_rate'] * 100:.1f}% | "
+                         f"${row['opt2_total']:,.2f} | ${row['balance_gap']:,.2f} |")
+        lines.append("")
+        if rate_crossover is None:
+            lines.append("**Crossover:** Option 2 does not catch up even at 20% p.a. "
+                         "outside rate — Option 1 wins on balance at every rate.\n")
+        elif rate_crossover == 0.0:
+            lines.append("**Crossover:** Option 2 leads even with 0% outside rate.\n")
+        else:
+            lines.append(f"**Crossover:** Option 2 overtakes Option 1 once the outside "
+                         f"rate reaches **{rate_crossover * 100:.2f}%** — in the default "
+                         f"scenario that is exactly the 4% rate the top-up itself earns "
+                         f"in the RA, so the lump-sum result is robust to any outside "
+                         f"rate below it (Option 2 wins only if the parked money "
+                         f"credibly out-earns the government-guaranteed CPF base).\n")
     lines.append("")
 
     lines.append("## 8. Conclusion\n")
@@ -675,8 +744,23 @@ def main(argv=None):
                  if row["crossover"] is not None else "Option 1 wins at all incomes")
         print(f"    headroom ${row['headroom']:>7,}: {cross}")
 
-    print("\n[7] Writing report...")
-    report = generate_report(cfg, opt1, opt2, checks, comparison, sensitivity)
+    print("\n[7] Outside-rate sensitivity...")
+    rate_rows, rate_cross = outside_rate_sensitivity(
+        cfg["ra_balance"], cfg["lump"], cfg["annual"], cfg["years"], None,
+        cfg["starting_age"])
+    for row in rate_rows:
+        print(f"    outside rate {row['outside_rate'] * 100:>5.1f}%: "
+              f"Opt 2 total ${row['opt2_total']:>12,.2f} | "
+              f"gap ${row['balance_gap']:>10,.2f}")
+    if rate_cross is None:
+        print("    crossover: Option 2 never catches up below 20% outside rate")
+    else:
+        print(f"    crossover: Option 2 overtakes Option 1 at "
+              f"{rate_cross * 100:.2f}% outside rate")
+
+    print("\n[8] Writing report...")
+    report = generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
+                             rate_rows=rate_rows, rate_crossover=rate_cross)
     out_dir = args.out_dir or os.path.dirname(os.path.abspath(__file__))
     os.makedirs(out_dir, exist_ok=True)
     report_path = os.path.join(out_dir, "cpf_ra_comparison_report.md")
