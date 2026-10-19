@@ -108,12 +108,8 @@ def plot_crossover_by_headroom(out, args, sensitivity):
     ax.set_xlabel("FRS headroom = FRS − existing RA balance "
                   "(SGD, thousands)")
     ax.set_ylabel("Break-even chargeable income (SGD, thousands)")
-    ax.set_title(
-        "Break-even chargeable income by FRS headroom\n"
-        f"Above this income, Option 2 (${args.annual:,.0f}/yr) beats "
-        f"Option 1 (${args.lump:,.0f} lump sum)\n"
-        f"Members turning {args.start_age} in 2026, FRS ${args.frs:,.0f}",
-        fontsize=11)
+    ax.set_title("Break-even chargeable income by FRS headroom",
+                 fontsize=11)
     ax.legend(fontsize=9, loc="upper left")
     ax.grid(alpha=0.3)
     fig.tight_layout()
