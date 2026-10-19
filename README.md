@@ -9,7 +9,7 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 **If your RA is already at the FRS — the normal position for most 55-year-olds — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
-**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (table in §4, Figure 2).
+**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (table in §3, Figure 2).
 
 ## 2. Options Compared
 
@@ -20,7 +20,9 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 | **Outside interest** | — | 2.5% p.a. on unused funds |
 | **Tax relief** | $8,000 in Year 1 only, **if below FRS** | $8,000/year while below FRS |
 
-## 3. Key Results (default scenario: existing RA at FRS, $220,400)
+## 3. Key Results
+
+### Key Result 1 — RA at FRS on day one (default scenario)
 
 Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS):
 
@@ -32,29 +34,35 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 (The existing $220,400 grows to $337,051.34 on its own in both options; the decision rests entirely on the top-up rows.)
 
-**Option 1 (lump sum) wins at every income level, by $7,989.70.** The gap is income-independent in this scenario; only the tax side varies with the member's position relative to FRS (Figure 1 shows the net-benefit curves).
+**Option 1 (lump sum) wins at every income level, by $7,989.70.** The gap is income-independent; only the tax side varies with the member's position relative to FRS (Figure 1 shows the net-benefit curves).
+
+*Robustness:* the gap above assumes the unused funds earn 2.5%; the options are exactly equal once the outside rate reaches **4.00%** — the rate the top-up itself earns in the RA — so the lump-sum conclusion holds for any outside rate below it (full sweep: report §8).
 
 ![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, default scenario (existing RA at FRS)](net_benefit.png)
 
-## 4. Decision Rule: Two Dimensions
+### Key Result 2 — RA below FRS
 
-The winner depends on (a) the existing RA balance relative to FRS and (b) the marginal tax bracket (Figure 2 maps this rule):
+With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows:
 
-| Headroom to FRS (G = FRS − RA) | RA Balance (2026 FRS $220,400) | Result |
+| Headroom to FRS (G = FRS − RA) | RA Balance (2026 FRS $220,400) | Break-even chargeable income |
 |---|---|---|
-| $0 – $40,000 | $180,400 – $220,400 | **Option 1 wins at all incomes** |
+| $0 – $40,000 | $180,400 – $220,400 | none — **Option 1 wins at all incomes** |
 | $48,000 | $172,400 | Option 2 wins only above ~$287,587 |
 | $56,000 | $164,400 | Option 2 wins only above ~$164,387 |
 | $64,000 | $156,400 | Option 2 wins only above ~$126,325 |
 | $72,000 | $148,400 | Option 2 wins only above ~$122,249 |
 | $80,000+ | ≤ $140,400 | Option 2 wins above ~$87,283 |
 
-Two further numbers:
-
-- **Outside-rate crossover: 4.00%.** The balance gap above assumes 2.5% on Option 2's unused funds; at an outside rate of 4.00% the options are exactly equal, and Option 2 wins above it. (Report §8 has the full sweep.)
-- **Low balances (RA < $60,000):** the top-up itself fills the 6%/5% tiers, widening Option 1's lead — e.g. with a $40,000 existing balance the gap is **$8,178.29**, the income crossover is **~$87,749**, and the outside-rate crossover moves to **4.03%**.
+Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-up itself, which widens Option 1's balance gap — e.g. with a $40,000 existing balance the gap is **$8,178.29**, the break-even is **~$87,749**, and the outside-rate crossover moves to **4.03%**.
 
 ![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
+
+## 4. Decision Rule
+
+The winner depends on two dimensions — the existing RA balance relative to FRS, and the marginal tax bracket:
+
+1. **RA at FRS on day one** (the normal position for most 55-year-olds): **Option 1 (lump sum)** — wins at every income level by $7,989.70, robust to any outside rate below 4.00% (Key Result 1).
+2. **RA below FRS:** compare your chargeable income with the break-even in Key Result 2 (Figure 2) — **below it, Option 1; above it, Option 2**.
 
 ## 5. Assumptions
 
