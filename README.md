@@ -26,6 +26,8 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 ## 3. Key Results
 
+The decision turns on two dimensions: the existing RA balance relative to FRS, and the member's marginal tax bracket.
+
 ### Key Result 1 — RA at FRS on day one: Option 1 (lump sum) wins
 
 Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS). Table 2 shows the 10-year values:
@@ -65,14 +67,7 @@ Members with RA below about $60,000 also get the preferential 6%/5% tiers on the
 
 ![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
 
-## 4. Decision Rule
-
-The winner depends on two dimensions — the existing RA balance relative to FRS, and the marginal tax bracket:
-
-1. **RA at FRS on day one** (the normal position for most 55-year-olds): **Option 1 (lump sum)** — wins at every income level by $7,989.70, robust to any outside rate below 4.00% (Key Result 1).
-2. **RA below FRS:** compare your chargeable income with the break-even in Table 3 (Key Result 2, Figure 2) — **below it, Option 1; above it, Option 2**.
-
-## 5. Assumptions
+## 4. Assumptions
 
 - FRS $220,400 / ERS $440,800 (members turning 55 in 2026)
 - CPF Cash Top-up Relief: $8,000/YA cap for self top-up; **cannot be carried forward**; FRS-capped
@@ -83,7 +78,7 @@ The winner depends on two dimensions — the existing RA balance relative to FRS
 
 Second-level detail — year-by-year balances, closed-form verification, per-bracket tax tables, the outside-rate sweep — is in [the full report](cpf_ra_comparison_report.md) (§5–§8).
 
-## 6. Files
+## 5. Files
 
 Usage examples for both scripts live in their docstrings (or run either with `--help`).
 
@@ -94,7 +89,7 @@ Usage examples for both scripts live in their docstrings (or run either with `--
 - [`crossover_by_headroom.png`](crossover_by_headroom.png) — Figure 2: break-even chargeable income by FRS headroom
 - [`research_findings.md`](research_findings.md) — IRAS/CPF source research
 
-## 7. Sources
+## 6. Sources
 
 - [IRAS Individual Income Tax Rates](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates)
 - [IRAS CPF Cash Top-up Relief (incl. FRS limit on relief)](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief)
