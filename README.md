@@ -11,9 +11,11 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 **If your RA is already at the FRS — the normal position for most 55-year-olds — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
-**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (table in §3, Figure 2).
+**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 2).
 
 ## 2. Options Compared
+
+**Table 1: The two top-up strategies**
 
 | | Option 1: Lump Sum | Option 2: Annual Top-ups |
 |---|---|---|
@@ -26,7 +28,9 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 ### Key Result 1 — RA at FRS on day one: Option 1 (lump sum) wins
 
-Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS):
+Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS). Table 2 shows the 10-year values:
+
+**Table 2: 10-year value of the $80,000 top-up — RA at FRS on day one**
 
 | | Option 1 | Option 2 |
 |---|---|---|
@@ -44,7 +48,9 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 ### Key Result 2 — RA below FRS: break-even income ~$87,283–$287,587 depending on headroom (Option 1 wins below it, Option 2 above it)
 
-With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows:
+With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows (Table 3):
+
+**Table 3: Break-even chargeable income by FRS headroom**
 
 | Headroom to FRS (G = FRS − RA) | RA Balance (2026 FRS $220,400) | Break-even chargeable income |
 |---|---|---|
@@ -64,7 +70,7 @@ Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-
 The winner depends on two dimensions — the existing RA balance relative to FRS, and the marginal tax bracket:
 
 1. **RA at FRS on day one** (the normal position for most 55-year-olds): **Option 1 (lump sum)** — wins at every income level by $7,989.70, robust to any outside rate below 4.00% (Key Result 1).
-2. **RA below FRS:** compare your chargeable income with the break-even in Key Result 2 (Figure 2) — **below it, Option 1; above it, Option 2**.
+2. **RA below FRS:** compare your chargeable income with the break-even in Table 3 (Key Result 2, Figure 2) — **below it, Option 1; above it, Option 2**.
 
 ## 5. Assumptions
 
