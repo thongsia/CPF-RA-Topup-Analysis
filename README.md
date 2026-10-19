@@ -46,7 +46,7 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 ![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, existing RA at FRS](net_benefit.png)
 
-### Key Result 2 — RA below FRS: break-even income ~$87,283–$287,587 depending on headroom (Option 1 wins below it, Option 2 above it)
+### Key Result 2 — RA below FRS: break-even income about $87,283–$287,587 depending on headroom (Option 1 wins below it, Option 2 above it)
 
 With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows (Table 3):
 
@@ -55,13 +55,13 @@ With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that
 | Headroom to FRS (G = FRS − RA) | RA Balance (2026 FRS $220,400) | Break-even chargeable income |
 |---|---|---|
 | $0 – $40,000 | $180,400 – $220,400 | none — **Option 1 wins at all incomes** |
-| $48,000 | $172,400 | Option 2 wins only above ~$287,587 |
-| $56,000 | $164,400 | Option 2 wins only above ~$164,387 |
-| $64,000 | $156,400 | Option 2 wins only above ~$126,325 |
-| $72,000 | $148,400 | Option 2 wins only above ~$122,249 |
-| $80,000+ | ≤ $140,400 | Option 2 wins above ~$87,283 |
+| $48,000 | $172,400 | Option 2 wins only above about $287,587 |
+| $56,000 | $164,400 | Option 2 wins only above about $164,387 |
+| $64,000 | $156,400 | Option 2 wins only above about $126,325 |
+| $72,000 | $148,400 | Option 2 wins only above about $122,249 |
+| $80,000+ | ≤ $140,400 | Option 2 wins above about $87,283 |
 
-Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-up itself, which widens Option 1's balance gap — e.g. with a $40,000 existing balance the gap is **$8,178.29**, the break-even is **~$87,749**, and the outside-rate crossover moves to **4.03%**.
+Members with RA below about $60,000 also get the preferential 6%/5% tiers on the top-up itself, which widens Option 1's balance gap — e.g. with a $40,000 existing balance the gap is **$8,178.29**, the break-even is **about $87,749**, and the outside-rate crossover moves to **4.03%**.
 
 ![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
 

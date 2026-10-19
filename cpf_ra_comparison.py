@@ -535,7 +535,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     else:
         lines.append(
             f"**Option 1 (the ${cfg['lump']:,.0f} lump sum) wins below a chargeable income of "
-            f"~${cross_income:,.0f}; Option 2 (${cfg['annual']:,.0f}/yr) wins above it.** "
+            f"about ${cross_income:,.0f}; Option 2 (${cfg['annual']:,.0f}/yr) wins above it.** "
             f"The lump sum holds a ${gap:,.2f} balance lead, but Option 2's {relief_years2} "
             f"years of FRS-capped tax relief outweigh it at higher marginal rates.")
     lines.append("\nFull reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit "
@@ -683,7 +683,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                      f"collects fewer relief years than needed to close the **${gap:,.2f}** balance gap — "
                      f"**Option 1 wins at every income level**.")
     else:
-        lines.append(f"**Scenario result:** **Option 1 wins below ~${cross_income:,.0f}** chargeable income "
+        lines.append(f"**Scenario result:** **Option 1 wins below about ${cross_income:,.0f}** chargeable income "
                      f"(balance gap ${gap:,.2f} dominates); **Option 2 wins above it** (multi-year tax relief "
                      f"outweighs the balance gap).")
     lines.append("")

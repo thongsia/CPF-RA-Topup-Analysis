@@ -83,7 +83,7 @@
 - From 1 Jan 2025, the ERS was raised from **3× BRS to 4× BRS**
 
 ### Historical ERS context
-- Pre-2025 ERS: 3× BRS (~$308,700 for 2024)
+- Pre-2025 ERS: 3× BRS (about $308,700 for 2024)
 - 2025 ERS: $426,000 (4× BRS of $106,500)
 - **2026 ERS (current): $440,800** (4× BRS of $110,200)
 
