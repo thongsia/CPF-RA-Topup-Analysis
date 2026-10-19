@@ -12,8 +12,12 @@ a function of FRS headroom (how much further top-up still attracts tax
 relief), i.e. the two-dimensional decision rule.
 
 Requires matplotlib.  Usage:
-    python3 make_crossover.py [--ra-balance 220400] [other options as
-    for cpf_ra_comparison.py] [--out-dir DIR]
+    python3 make_crossover.py                        # default scenario
+    python3 make_crossover.py --ra-balance 140400     # your own scenario
+
+Writes net_benefit.png (Figure 1) and crossover_by_headroom.png
+(Figure 2) into --out-dir (default: this script's directory).  Takes
+the same scenario flags as cpf_ra_comparison.py; see --help.
 """
 
 import argparse
@@ -35,7 +39,7 @@ def net_curves(incomes, opt1_final, opt2_total, relief1, sched2):
     return n1, n2
 
 
-def plot_net_benefit(out, args, headroom, incomes, n1, n2, cross):
+def plot_net_benefit(out, args, incomes, n1, n2, cross):
     fig, ax = plt.subplots(figsize=(7.8, 5.2))
     ax.plot([i / 1000 for i in incomes], n1, color="tab:blue", lw=2,
             label=f"Option 1 net (${args.lump:,.0f} lump sum)")
@@ -46,8 +50,7 @@ def plot_net_benefit(out, args, headroom, incomes, n1, n2, cross):
                   "from CPF top-up relief")
     ax.set_title(
         f"Option 1 vs Option 2: net benefit by chargeable income\n"
-        f"Scenario: existing RA balance ${args.ra_balance:,.0f} "
-        f"(relief headroom to FRS: ${headroom:,.0f})\n"
+        f"Existing RA balance ${args.ra_balance:,.0f} — "
         f"{args.years}-year horizon, tiered 55+ interest, FRS-capped relief",
         fontsize=11)
     ax.legend(fontsize=9)
@@ -70,7 +73,7 @@ def plot_net_benefit(out, args, headroom, incomes, n1, n2, cross):
                         alpha=0.08, color="tab:orange", label="Option 2 better")
     else:
         ax.text(0.5, 0.05, "Option 1 wins at all incomes\n"
-                "(no relief headroom to FRS)",
+                "(RA already at FRS — top-ups earn no tax relief)",
                 transform=ax.transAxes, ha="center",
                 bbox=dict(boxstyle="round", fc="lightyellow",
                           ec="gray", alpha=0.9), fontsize=10)
@@ -153,7 +156,7 @@ def main():
                                          args.start_age)
 
     plot_net_benefit(os.path.join(args.out_dir, NET_BENEFIT_PNG), args,
-                     headroom, incomes, n1, n2, cross)
+                     incomes, n1, n2, cross)
     plot_crossover_by_headroom(os.path.join(args.out_dir, CROSSOVER_PNG),
                                args, sensitivity)
 

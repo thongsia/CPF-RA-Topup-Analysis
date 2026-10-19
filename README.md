@@ -5,7 +5,7 @@ Comparing two strategies to deploy $80,000 into a CPF Retirement Account (RA) at
 1. **FRS-capped tax relief** — CPF Cash Top-up Relief (max $8,000/YA) is only granted for the portion of a top-up that fills the RA up to the Full Retirement Sum (FRS). Top-ups above FRS (up to ERS) earn interest but no relief.
 2. **Tiered 55+ interest** — RA interest is 6% on the first $30,000, 5% on the next $30,000, 4% on the rest of the combined SA/RA balance (4% base + 2%/1% additional interest). If your existing RA balance already exceeds $60,000 (true for any standard 55+ member; minimum BRS is $110,200), all top-up dollars earn a flat 4%.
 
-## Options Compared
+## 1. Options Compared
 
 | | Option 1: Lump Sum | Option 2: Annual Top-ups |
 |---|---|---|
@@ -14,7 +14,7 @@ Comparing two strategies to deploy $80,000 into a CPF Retirement Account (RA) at
 | **Outside interest** | — | 2.5% p.a. on unused funds |
 | **Tax relief** | $8,000 in Year 1 only, **if below FRS** | $8,000/year while below FRS |
 
-## Key Results (default scenario: existing RA at FRS, $220,400)
+## 2. Key Results (default scenario: existing RA at FRS, $220,400)
 
 Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to either option** (RA already at FRS).
 
@@ -27,7 +27,7 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 ![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, default scenario (existing RA at FRS)](net_benefit.png)
 
-## Decision Rule: Two Dimensions
+## 3. Decision Rule: Two Dimensions
 
 The winner depends on two things: the existing RA balance relative to FRS, and the marginal tax bracket (Figure 2 maps this rule):
 
@@ -44,22 +44,7 @@ Members with RA below ~$60,000 also get the preferential 6%/5% tiers on the top-
 
 ![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
 
-## Usage
-
-```bash
-# default scenario (RA at FRS 2026)
-python3 cpf_ra_comparison.py
-
-# your own RA balance
-python3 cpf_ra_comparison.py --ra-balance 140400
-
-# regenerate the chart
-python3 make_crossover.py --ra-balance 140400   # needs matplotlib
-```
-
-Other flags: `--frs`, `--ers`, `--lump`, `--annual`, `--years`, `--start-age`, `--outside-rate`, `--out-dir`.
-
-## Assumptions
+## 4. Assumptions
 
 - FRS $220,400 / ERS $440,800 (members turning 55 in 2026)
 - CPF Cash Top-up Relief: $8,000/YA cap for self top-up; **cannot be carried forward**; FRS-capped
@@ -69,7 +54,9 @@ Other flags: `--frs`, `--ers`, `--lump`, `--annual`, `--years`, `--start-age`, `
 - Singapore progressive tax brackets (YA 2024 onwards)
 - $80,000 total personal tax-relief cap ignored; MRSS grant interaction noted in the report
 
-## Files
+## 5. Files
+
+Usage examples for both scripts live in their docstrings (or run either with `--help`).
 
 - [`cpf_ra_comparison.py`](cpf_ra_comparison.py) — analysis script (stdlib only, self-verifying)
 - [`make_crossover.py`](make_crossover.py) — chart generator (matplotlib)
@@ -78,7 +65,7 @@ Other flags: `--frs`, `--ers`, `--lump`, `--annual`, `--years`, `--start-age`, `
 - [`crossover_by_headroom.png`](crossover_by_headroom.png) — Figure 2: break-even chargeable income by FRS headroom
 - [`research_findings.md`](research_findings.md) — IRAS/CPF source research
 
-## Sources
+## 6. Sources
 
 - [IRAS Individual Income Tax Rates](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates)
 - [IRAS CPF Cash Top-up Relief (incl. FRS limit on relief)](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief)

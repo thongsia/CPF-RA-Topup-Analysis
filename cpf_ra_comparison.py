@@ -18,6 +18,15 @@ Rules implemented (verified against IRAS / CPF Board, see research_findings.md):
      (FRS).  Top-ups above FRS (up to the Enhanced Retirement Sum, ERS)
      earn interest but generate NO tax relief.  Unused relief cannot be
      carried forward.
+
+Usage:
+    python3 cpf_ra_comparison.py                      # default scenario
+                                                      # (existing RA at FRS 2026)
+    python3 cpf_ra_comparison.py --ra-balance 140400  # your own RA balance
+
+Writes cpf_ra_comparison_report.md next to the script (override with
+--out-dir) and prints a summary plus self-verification checks to stdout.
+See --help for all options.
 """
 
 import argparse
