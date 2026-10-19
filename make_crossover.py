@@ -49,9 +49,7 @@ def plot_net_benefit(out, args, incomes, n1, n2, cross):
     ax.set_ylabel("Net benefit (SGD)\n= final total value + tax savings\n"
                   "from CPF top-up relief")
     ax.set_title(
-        f"Option 1 vs Option 2: net benefit by chargeable income\n"
-        f"Existing RA balance ${args.ra_balance:,.0f} — "
-        f"{args.years}-year horizon, tiered 55+ interest, FRS-capped relief",
+        f"Option 1 vs Option 2: net benefit by chargeable income",
         fontsize=11)
     ax.legend(fontsize=9)
     ax.grid(alpha=0.3)
@@ -77,7 +75,12 @@ def plot_net_benefit(out, args, incomes, n1, n2, cross):
                 transform=ax.transAxes, ha="center",
                 bbox=dict(boxstyle="round", fc="lightyellow",
                           ec="gray", alpha=0.9), fontsize=10)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0, 0.08, 1, 1])
+    fig.text(0.5, 0.015,
+             f"Figure 1: Existing RA balance ${args.ra_balance:,.0f}; "
+             f"{args.years}-year horizon; tiered 55+ interest; "
+             f"FRS-capped tax relief",
+             ha="center", va="bottom", fontsize=9, color="0.25")
     fig.savefig(out, dpi=150)
     plt.close(fig)
     print(f"Figure 1 written -> {out}")
@@ -112,7 +115,12 @@ def plot_crossover_by_headroom(out, args, sensitivity):
                  fontsize=11)
     ax.legend(fontsize=9, loc="upper left")
     ax.grid(alpha=0.3)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0, 0.08, 1, 1])
+    fig.text(0.5, 0.015,
+             f"Figure 2: Above the break-even income, Option 2 "
+             f"(${args.annual:,.0f}/yr) beats Option 1 "
+             f"(${args.lump:,.0f} lump sum); below it, Option 1 wins",
+             ha="center", va="bottom", fontsize=9, color="0.25")
     fig.savefig(out, dpi=150)
     plt.close(fig)
     print(f"Figure 2 written -> {out}")
