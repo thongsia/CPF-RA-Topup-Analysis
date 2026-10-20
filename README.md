@@ -1,6 +1,6 @@
 # CPF RA Top-Up Analysis
 
-_Disclaimer: This analysis was prompted by a human, then initially designed and carried out by an AI agent (Hermes + Qwen3.8-27B + [AIOS skillset](https://github.com/thongsia/aios)), and finally shaped and edited collaboratively between the two._
+_Disclaimer: This analysis was prompted by a human, then initially designed and carried out by an AI agent (Hermes + Qwen3.8-27B), and finally shaped and edited collaboratively between the two._
 
 A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over the next 10 years. Two ways to do it: one **$80,000 lump sum**, or **$8,000 a year**. Which is better? This repo answers that under the current IRAS/CPF rules, including the two that dominate the answer:
 
