@@ -135,7 +135,9 @@ def plot_crossover_by_headroom(out, args, sensitivity):
     ax.set_ylabel("Break-even chargeable income (SGD, thousands)")
     ax.set_title("Break-even chargeable income by FRS headroom",
                  fontsize=11)
-    ax.legend(fontsize=9, loc="upper left")
+    # the line sits on the right of the chart, so anchor the legend there
+    # too; the upper-left corner sits above the shaded Option-1 region
+    ax.legend(fontsize=9, loc="upper right")
     ax.grid(alpha=0.3)
     fig.tight_layout(rect=[0, 0.08, 1, 1])
     fig.text(0.5, 0.015,
