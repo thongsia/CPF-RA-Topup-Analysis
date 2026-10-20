@@ -18,7 +18,7 @@ The model's assumptions (Table 1):
 |---|-----------|---------|
 | 1 | Existing RA balance | $220,400 |
 | 2 | RA interest (age 55+) | Tiered: 6% on first $30,000, 5% on next $30,000, 4% on the rest of the combined SA/RA balance (4% base + 2%/1% additional interest). Top-up dollars fall in the flat 4% tier (existing balance already fills the preferential tiers). |
-| 3 | Outside interest (Option 2 unused funds) | 2.5% p.a. |
+| 3 | Outside interest (Option 2 unused funds) | 2.5% p.a. — an assumption, pegged to the prevailing CPF Ordinary Account (OA) interest rate (2.5%, the OA floor) |
 | 4 | Tax relief cap | $8,000/YA for self top-up |
 | 5 | Relief eligibility | Only the portion of a top-up that fills the RA up to FRS ($220,400) attracts relief; top-ups above FRS (up to ERS $440,800) earn interest but NO relief |
 | 6 | Carry-forward | Unused relief CANNOT be carried forward |

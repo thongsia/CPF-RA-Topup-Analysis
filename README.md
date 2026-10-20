@@ -23,7 +23,7 @@ Two ways to do it, summarised in Table 1:
 |---|---|---|
 | **Deposit** | $80,000 at Year 1 start | $8,000/year for 10 years |
 | **CPF RA interest** | Tiered 55+ rates on total balance | Tiered 55+ rates on total balance |
-| **Outside interest** | — | 2.5% p.a. on unused funds |
+| **Outside interest** | — | 2.5% p.a. on unused funds (assumption, pegged to the prevailing CPF OA rate) |
 | **Tax relief** | $8,000 in Year 1 only, **if below FRS** | $8,000/year while below FRS |
 
 ## 3. Key Results
@@ -71,7 +71,7 @@ For headroom beyond about $168,400 (RA below about $52,000), top-up dollars reac
 
 - FRS $220,400 / ERS $440,800 (members turning 55 in 2026)
 - CPF Cash Top-up Relief: $8,000/YA cap for self top-up; **cannot be carried forward**; FRS-capped
-- Outside interest rate (Option 2 unused funds): 2.5% p.a. — an assumption, not a guarantee; the CPF 4% base is a floor
+- Outside interest rate (Option 2 unused funds): 2.5% p.a. — an assumption pegged to the prevailing CPF OA interest rate, not a guarantee; the CPF 4% base is a floor
 - Chargeable income constant across all 10 years; no discounting (nominal comparison)
 - Singapore progressive tax brackets (YA 2024 onwards)
 - $80,000 total personal tax-relief cap ignored; MRSS grant interaction noted in the report

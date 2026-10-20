@@ -558,7 +558,13 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                  "already fills the preferential tiers)."
                  if ra >= 60_000 else "Top-up dollars fill the 6%/5% tiers.")
     lines.append(f"| 2 | RA interest (age 55+) | Tiered: 6% on first $30,000, 5% on next $30,000, 4% on the rest of the combined SA/RA balance (4% base + 2%/1% additional interest). {tier_note} |")
-    lines.append(f"| 3 | Outside interest (Option 2 unused funds) | {cfg['outside_rate'] * 100:.1f}% p.a. |")
+    outside_note = (
+        f"{cfg['outside_rate'] * 100:.1f}% p.a. — an assumption, pegged to the "
+        f"prevailing CPF Ordinary Account (OA) interest rate (2.5%, the OA floor)"
+        if cfg["outside_rate"] == 0.025
+        else f"{cfg['outside_rate'] * 100:.1f}% p.a. (assumption)"
+    )
+    lines.append(f"| 3 | Outside interest (Option 2 unused funds) | {outside_note} |")
     lines.append("| 4 | Tax relief cap | $8,000/YA for self top-up |")
     lines.append(f"| 5 | Relief eligibility | Only the portion of a top-up that fills the RA up to FRS (${frs:,.0f}) attracts relief; top-ups above FRS (up to ERS ${cfg['ers']:,.0f}) earn interest but NO relief |")
     lines.append("| 6 | Carry-forward | Unused relief CANNOT be carried forward |")
