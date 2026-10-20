@@ -18,7 +18,7 @@
 | Next $500,000 ($500,001–$1,000,000) | 23% | $199,150 |
 | In excess of $1,000,000 | 24% | — |
 
-- **Top marginal rate: 24%** (unchanged from YA 2017 onwards)
+- **Top marginal rate: 24% from YA 2024 onwards** — before YA 2024 the top rate was a flat 22% on all income above $320,000; the 22% ($320k–$500k) and 23% ($500k–$1M) bands were introduced together with the 24% top band from YA 2024 (per the linked IRAS page, "From YA 2024 onwards")
 - **Source**: https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates
 
 ---
@@ -43,7 +43,7 @@
 ### Key Limit: Tax relief is capped at FRS, not ERS
 - Tax relief for cash top-ups to RA (age 55+) is only given for the portion that fills up to the **Full Retirement Sum (FRS)**
 - Top-ups above FRS (up to ERS) earn interest but generate **NO tax relief**
-- FRS for YA 2026: $213,000; FRS for YA 2027: $220,400
+- The relief-applicable FRS is the FRS in force for the **YA of the top-up** (per the IRAS table): top-up in 2025 → YA 2026 → $213,000; top-up in 2026 → YA 2027 → $220,400. This is a distinct number from the FRS of a member's own turning-55 year (a member turning 55 in 2026 has FRS $220,400). The two coincide for a 2026 turn-55's first top-up year and diverge afterwards, as the relief-applicable FRS rises each January
 
 **Source**: https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief
 

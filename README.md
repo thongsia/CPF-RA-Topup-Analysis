@@ -5,15 +5,17 @@ _Disclaimer: This analysis was prompted by a human, then initially designed and 
 A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over the next 10 years. Two ways to do it: one **$80,000 lump sum**, or **$8,000 a year**. Which is better? This repo answers that under the current IRAS/CPF rules, including the two that dominate the answer:
 
 1. **FRS-capped tax relief** — CPF Cash Top-up Relief (max $8,000/YA) is only granted for the portion of a top-up that fills the RA up to the Full Retirement Sum (FRS, $220,400 in 2026). Top-ups above FRS (up to ERS $440,800) earn interest but no relief.
-2. **Tiered 55+ interest** — RA interest is 6% on the first $30,000, 5% on the next $30,000, 4% on the rest of the combined SA/RA balance (4% base + 2%/1% additional interest). If the existing RA balance already exceeds $60,000 (true for any standard 55+ member; minimum BRS is $110,200), all top-up dollars earn a flat 4%.
+2. **Tiered 55+ interest** — RA interest is 6% on the first $30,000, 5% on the next $30,000, 4% on the rest of the combined SA/RA balance (4% base + 2%/1% additional interest). If the existing RA balance already exceeds $60,000 (true for any member who met the minimum requirement — the BRS alone, $110,200, is well above $60,000), all top-up dollars earn a flat 4%.
 
 ## 1. Short Answer
 
-**If your RA is already at the FRS — the normal position for most 55-year-olds — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
+**If your RA is already at the FRS — a common position for 55-year-olds: in 2025, 73.4% of members turning 55 had met the FRS, or the BRS while owning one property, up from 70.5% in 2024 ([Straits Times, 3 Jul 2026](https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55)) — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
-**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 2).
+**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 1).
 
 ## 2. Options Compared
+
+Two ways to do it, summarised in Table 1:
 
 **Table 1: The two top-up strategies**
 
@@ -42,11 +44,9 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 (The existing $220,400 grows to $337,051.34 on its own in both options; the decision rests entirely on the top-up rows.)
 
-**Option 1 (lump sum) wins at every income level, by $7,989.70.** The gap is income-independent; only the tax side varies with the member's position relative to FRS (Figure 1 shows the net-benefit curves).
+**Option 1 (lump sum) wins at every income level, by $7,989.70.** The gap is income-independent; only the tax side varies with the member's position relative to FRS. With the RA at FRS, no top-up in either option attracts relief, so both net-benefit curves are flat across the income range — Option 1 a constant $455,470.88, Option 2 a constant $447,481.18 at every chargeable income, a gap of $7,989.70 (about 1.8%) that does not depend on the bracket.
 
 *Robustness:* the gap above assumes the unused funds earn 2.5%; the options are exactly equal once the outside rate reaches **4.00%** — the rate the top-up itself earns in the RA — so the lump-sum conclusion holds for any outside rate below it (full sweep: report §8).
-
-![Figure 1 — Option 1 vs Option 2: net benefit by chargeable income, existing RA at FRS](net_benefit.png)
 
 ### Key Result 2 — RA below FRS: break-even income about $87,283–$287,587 depending on headroom (Option 1 wins below it, Option 2 above it)
 
@@ -61,11 +61,11 @@ With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that
 | $56,000 | $164,400 | Option 2 wins only above about $164,387 |
 | $64,000 | $156,400 | Option 2 wins only above about $126,325 |
 | $72,000 | $148,400 | Option 2 wins only above about $122,249 |
-| $80,000+ | ≤ $140,400 | Option 2 wins above about $87,283 |
+| $80,000 – $168,400 | $52,000 – $140,400 | Option 2 wins only above about $87,283 |
 
-Members with RA below about $60,000 also get the preferential 6%/5% tiers on the top-up itself, which widens Option 1's balance gap — e.g. with a $40,000 existing balance the gap is **$8,178.29**, the break-even is **about $87,749**, and the outside-rate crossover moves to **4.03%**.
+For headroom beyond about $168,400 (RA below about $52,000), top-up dollars reach the preferential 6%/5% tiers, which widens Option 1's balance gap and pushes the break-even up — e.g. with a $40,000 existing balance the gap is **$8,178.29** and the break-even **about $87,749** (outside-rate crossover **4.03%**); with $30,000 the gap is **$8,478.66** and the break-even **about $120,631**.
 
-![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
+![Figure 1 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
 
 ## 4. Assumptions
 
@@ -83,10 +83,9 @@ Second-level detail — year-by-year balances, closed-form verification, per-bra
 Usage examples for both scripts live in their docstrings (or run either with `--help`).
 
 - [`cpf_ra_comparison.py`](cpf_ra_comparison.py) — analysis script (stdlib only, self-verifying)
-- [`make_crossover.py`](make_crossover.py) — chart generator (matplotlib)
+- [`make_crossover.py`](make_crossover.py) — Figure 1 generator (matplotlib); the net-benefit chart is optional (`--net-benefit`) and uninformative for the default at-FRS scenario, which the text states instead
 - [`cpf_ra_comparison_report.md`](cpf_ra_comparison_report.md) — full report with all tables
-- [`net_benefit.png`](net_benefit.png) — Figure 1: net benefit by chargeable income for the chosen scenario
-- [`crossover_by_headroom.png`](crossover_by_headroom.png) — Figure 2: break-even chargeable income by FRS headroom
+- [`crossover_by_headroom.png`](crossover_by_headroom.png) — Figure 1: break-even chargeable income by FRS headroom
 - [`research_findings.md`](research_findings.md) — IRAS/CPF source research
 
 ## 6. Sources
@@ -94,3 +93,5 @@ Usage examples for both scripts live in their docstrings (or run either with `--
 - [IRAS Individual Income Tax Rates](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates)
 - [IRAS CPF Cash Top-up Relief (incl. FRS limit on relief)](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief)
 - [CPF Board RA top-ups (ERS cap, additional interest)](https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts)
+- Straits Times, "More hit CPF retirement targets at 55" (3 Jul 2026) — 73.4% of 2025's 55-year-olds met the FRS or the BRS with one property, up from 70.5% in 2024: https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55
+- MOM written reply to Parliamentary Question (Feb 2023) — about 33% of active members turning 55 in 2022 had not set aside the FRS in cash: https://www.mom.gov.sg/newsroom/parliament-questions-and-replies/2023/0222-written-answer-to-pq-on-data-on-cpf-members-who-are-unable-to-set-aside-cpf-frs

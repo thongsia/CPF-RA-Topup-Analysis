@@ -6,9 +6,11 @@
 
 **Option 1 (the $80,000 lump sum) wins at every income level, ahead by $7,989.70.** The RA is already at the FRS, so neither top-up earns tax relief and the decision is pure interest: the lump sum compounds at 4% for the full 10 years, while Option 2's $8,000 is split each year between the RA and an outside pot earning 2.5%. The result holds for any outside rate below 4.00% (§8).
 
-Full reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit (§7, Table 6, Figure 1), and the two-dimensional decision rule (§8, Tables 7–8, Figure 2).
+Full reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit (§7, Table 6), and the two-dimensional decision rule (§8, Tables 7–8, Figure 1).
 
 ## 2. Assumptions
+
+The model's assumptions (Table 1):
 
 **Table 1: Assumptions**
 
@@ -26,6 +28,8 @@ Full reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benef
 
 ## 3. Data Sources
 
+All parameters come from official IRAS / CPF Board sources, plus the two statistics cited in the conclusion (Table 2):
+
 **Table 2: Data sources**
 
 | Source | URL |
@@ -33,6 +37,8 @@ Full reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benef
 | IRAS Individual Income Tax Rates | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates |
 | IRAS CPF Cash Top-up Relief (incl. FRS limit on relief) | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief |
 | CPF Board RA top-ups (ERS cap, additional interest) | https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts |
+| Straits Times, 'More hit CPF retirement targets at 55' (3 Jul 2026) — 73.4% of 2025's 55-year-olds met the FRS or the BRS with one property, up from 70.5% in 2024 | https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55 |
+| MOM written reply to Parliamentary Question (Feb 2023) — about 33% of active members turning 55 in 2022 had not set aside the FRS in cash | https://www.mom.gov.sg/newsroom/parliament-questions-and-replies/2023/0222-written-answer-to-pq-on-data-on-cpf-members-who-are-unable-to-set-aside-cpf-frs |
 
 ## 4. Singapore Progressive Income Tax Brackets (YA 2024 onwards)
 
@@ -118,31 +124,29 @@ RA totals include the existing balance; 'top-up value' is the part attributable 
 
 ## 7. Per-Bracket Comparison (chosen scenario)
 
-Net benefit = final value (RA total + outside pot) + total tax savings (Table 6). Figure 1 (`net_benefit.png`, also in the README) plots the net-benefit curves by chargeable income.
-
-![Figure 1 — net benefit by chargeable income, chosen scenario (existing RA at FRS)](net_benefit.png)
+Net benefit = final value (RA total + outside pot) + total tax savings (Table 6). With the RA at FRS, no top-up in either option attracts relief, so the net-benefit curves are flat across the income range: Option 1 a constant $455,470.88, Option 2 a constant $447,481.18 at every chargeable income — a gap of $7,989.70 (about 1.8%) that does not depend on the bracket.
 
 **Table 6: Net benefit by chargeable income**
 
-| Chargeable Income | Marginal Rate | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |
+| Chargeable Income | Marginal Rate (next $) | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |
 |-------------------|--------------|-------------|-------------------|-----------|-------------|-------------------|-----------|------------------|--------|
-| $20,000 | 2.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $30,000 | 3.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $40,000 | 7.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $80,000 | 11.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $120,000 | 15.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $160,000 | 18.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $200,000 | 19.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $240,000 | 19.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $280,000 | 20.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $320,000 | 22.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $500,000 | 23.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $1,000,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
-| $1,500,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | $-7,989.70 | Option 1 |
+| $20,000 | 2.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $30,000 | 3.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $40,000 | 7.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $80,000 | 11.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $120,000 | 15.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $160,000 | 18.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $200,000 | 19.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $240,000 | 19.5% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $280,000 | 20.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $320,000 | 22.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $500,000 | 23.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $1,000,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
+| $1,500,000 | 24.0% | $455,470.88 | $0.00 | $455,470.88 | $447,481.18 | $0.00 | $447,481.18 | ($7,989.70) | Option 1 |
 
 ## 8. Sensitivity: Crossover by FRS Headroom
 
-How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Table 7 lists the break-even by headroom; Figure 2 (`crossover_by_headroom.png`, also in the README) plots it as a function of FRS headroom.
+How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. how much further top-up still attracts relief). Table 7 lists the break-even by headroom; Figure 1 (`crossover_by_headroom.png`, also in the README) plots it as a function of FRS headroom.
 
 **Table 7: Break-even chargeable income by FRS headroom**
 
@@ -160,7 +164,10 @@ How the winner changes with existing RA balance (headroom G = FRS − RA, i.e. h
 | $72,000 | $148,400 | $348,893.29 | $340,903.59 | $7,989.70 | 9/10 | Option 2 wins above $122,249 |
 | $80,000 | $140,400 | $337,051.34 | $329,061.64 | $7,989.70 | 10/10 | Option 2 wins above $87,283 |
 
-![Figure 2 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
+Beyond the last row, as long as the existing RA stays at least about $52,000 (headroom up to about $168,400) the gap remains $7,989.70 and the break-even about $87,283; below that, top-up dollars reach the 6%/5% tiers, which widens the gap — e.g. RA $40,000 → gap $8,178.29, break-even about $87,749; RA $30,000 → gap $8,478.66, break-even about $120,631.
+
+
+![Figure 1 — break-even chargeable income by FRS headroom; the shaded region is where Option 1 wins at all incomes](crossover_by_headroom.png)
 
 
 ### Crossover by Outside Rate (chosen scenario)
@@ -177,7 +184,7 @@ The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2'
 | 2.5% | $447,481.18 | $7,989.70 |
 | 3.0% | $449,993.09 | $5,477.79 |
 | 4.0% | $455,470.88 | $0.00 |
-| 5.0% | $461,599.42 | $-6,128.54 |
+| 5.0% | $461,599.42 | ($6,128.54) |
 
 **Crossover:** Option 2 overtakes Option 1 once the outside rate reaches **4.00%** — in the default scenario that is exactly the 4% rate the top-up itself earns in the RA, so the lump-sum result is robust to any outside rate below it (Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base).
 
@@ -188,7 +195,7 @@ The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2'
 
 **General decision rule (age-55 member, YA 2024+ brackets):**
 
-1. RA at or above FRS (the standard position for most 55-year-olds): the lump sum wins outright — no relief on either option, and the full amount compounds from Year 1.
+1. RA at or above FRS (a common position — in 2025, 73.4% of members turning 55 had met the FRS, or the BRS while owning one property, up from 70.5% in 2024; Straits Times, 3 Jul 2026, cited in Table 2): the lump sum wins outright — no relief on either option, and the full amount compounds from Year 1.
 2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8).
 3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their tax relief (IRAS, from YA 2026); the $2,000/yr matching grant usually beats the relief it displaces.
 

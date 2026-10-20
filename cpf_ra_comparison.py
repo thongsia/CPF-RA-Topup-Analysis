@@ -10,9 +10,9 @@ Rules implemented (verified against IRAS / CPF Board, see research_findings.md):
        6% on the first $30,000, 5% on the next $30,000, 4% on the rest
      (4% base rate + 2%/1% "additional interest").  The tiers apply to the
      member's TOTAL balance, so if the existing RA balance already exceeds
-     $60,000 (true for any standard 55+ member, minimum BRS = $110,200),
-     all top-up dollars earn a flat 4% and the model reduces to the
-     flat-rate case.
+     $60,000 (true for any member who met the minimum requirement — the
+     BRS alone, $110,200, is well above $60,000), all top-up dollars
+     earn a flat 4% and the model reduces to the flat-rate case.
   2. CPF Cash Top-up Relief (max $8,000/YA for self) is only granted for the
      portion of a top-up that fills the RA up to the Full Retirement Sum
      (FRS).  Top-ups above FRS (up to the Enhanced Retirement Sum, ERS)
@@ -497,6 +497,12 @@ def outside_rate_sensitivity(existing, lump, annual, years, tiers=None,
 # ==============================================================================
 # Report
 # ==============================================================================
+def fmt_signed(x):
+    """Format a possibly-negative amount: negatives in parentheses, so no
+    '$-x' sequences appear in tables."""
+    return f"${x:,.2f}" if x >= 0 else f"(${abs(x):,.2f})"
+
+
 def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                     rate_rows=None, rate_crossover=None):
     frs = cfg["frs"]
@@ -539,10 +545,11 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
             f"The lump sum holds a ${gap:,.2f} balance lead, but Option 2's {relief_years2} "
             f"years of FRS-capped tax relief outweigh it at higher marginal rates.")
     lines.append("\nFull reasoning: year-by-year balances (§5, Tables 4–5), per-bracket net benefit "
-                 "(§7, Table 6, Figure 1), and the two-dimensional decision rule "
-                 "(§8, Tables 7–8, Figure 2).\n")
+                 "(§7, Table 6), and the two-dimensional decision rule "
+                 "(§8, Tables 7–8, Figure 1).\n")
 
     lines.append("## 2. Assumptions\n")
+    lines.append("The model's assumptions (Table 1):\n")
     lines.append("**Table 1: Assumptions**\n")
     lines.append("| # | Assumption | Details |")
     lines.append("|---|-----------|---------|")
@@ -561,12 +568,16 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 3. Data Sources\n")
+    lines.append("All parameters come from official IRAS / CPF Board sources, plus the two "
+                 "statistics cited in the conclusion (Table 2):\n")
     lines.append("**Table 2: Data sources**\n")
     lines.append("| Source | URL |")
     lines.append("|--------|-----|")
     lines.append("| IRAS Individual Income Tax Rates | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates |")
     lines.append("| IRAS CPF Cash Top-up Relief (incl. FRS limit on relief) | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief |")
     lines.append("| CPF Board RA top-ups (ERS cap, additional interest) | https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts |")
+    lines.append("| Straits Times, 'More hit CPF retirement targets at 55' (3 Jul 2026) — 73.4% of 2025's 55-year-olds met the FRS or the BRS with one property, up from 70.5% in 2024 | https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55 |")
+    lines.append("| MOM written reply to Parliamentary Question (Feb 2023) — about 33% of active members turning 55 in 2022 had not set aside the FRS in cash | https://www.mom.gov.sg/newsroom/parliament-questions-and-replies/2023/0222-written-answer-to-pq-on-data-on-cpf-members-who-are-unable-to-set-aside-cpf-frs |")
     lines.append("")
 
     lines.append("## 4. Singapore Progressive Income Tax Brackets (YA 2024 onwards)\n")
@@ -605,13 +616,20 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
 
     lines.append("## 7. Per-Bracket Comparison (chosen scenario)\n")
-    lines.append("Net benefit = final value (RA total + outside pot) + total tax savings "
-                 "(Table 6). Figure 1 (`net_benefit.png`, also in the README) plots the "
-                 "net-benefit curves by chargeable income.\n")
-    lines.append("![Figure 1 — net benefit by chargeable income, chosen scenario "
-                 "(existing RA at FRS)](net_benefit.png)\n")
+    if headroom <= 0:
+        lines.append(
+            f"Net benefit = final value (RA total + outside pot) + total tax savings "
+            f"(Table 6). With the RA at FRS, no top-up in either option attracts "
+            f"relief, so the net-benefit curves are flat across the income range: "
+            f"Option 1 a constant ${o1:,.2f}, Option 2 a constant ${o2:,.2f} at "
+            f"every chargeable income — a gap of {fmt_signed(gap)} (about "
+            f"{gap / o1 * 100:.1f}%) that does not depend on the bracket.\n")
+    else:
+        lines.append("Net benefit = final value (RA total + outside pot) + total tax savings "
+                     "(Table 6). For this scenario the net-benefit curves are plotted in "
+                     "`net_benefit.png` (regenerate with `make_crossover.py --net-benefit`).\n")
     lines.append("**Table 6: Net benefit by chargeable income**\n")
-    lines.append("| Chargeable Income | Marginal Rate | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | "
+    lines.append("| Chargeable Income | Marginal Rate (next $) | Opt 1 Final | Opt 1 Tax Savings | Opt 1 Net | "
                  "Opt 2 Total | Opt 2 Tax Savings | Opt 2 Net | Difference (2−1) | Winner |")
     lines.append("|-------------------|--------------|-------------|-------------------|-----------|"
                  "-------------|-------------------|-----------|------------------|--------|")
@@ -621,13 +639,13 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
             f"${row['opt1_final']:,.2f} | ${row['opt1_tax_savings']:,.2f} | "
             f"${row['opt1_net']:,.2f} | ${row['opt2_total']:,.2f} | "
             f"${row['opt2_tax_savings']:,.2f} | ${row['opt2_net']:,.2f} | "
-            f"${row['difference']:,.2f} | {row['winner']} |")
+            f"{fmt_signed(row['difference'])} | {row['winner']} |")
     lines.append("")
 
     lines.append("## 8. Sensitivity: Crossover by FRS Headroom\n")
     lines.append("How the winner changes with existing RA balance "
                  "(headroom G = FRS − RA, i.e. how much further top-up still attracts relief). "
-                 "Table 7 lists the break-even by headroom; Figure 2 "
+                 "Table 7 lists the break-even by headroom; Figure 1 "
                  "(`crossover_by_headroom.png`, also in the README) plots it as a function "
                  "of FRS headroom.\n")
     lines.append("**Table 7: Break-even chargeable income by FRS headroom**\n")
@@ -640,8 +658,34 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
         lines.append(f"| ${row['headroom']:,.0f} | ${row['ra_balance']:,.0f} | "
                      f"${row['opt1_final']:,.2f} | ${row['opt2_total']:,.2f} | "
                      f"${row['balance_gap']:,.2f} | {row['relief_years_opt2']}/{cfg['years']} | {cross} |")
+    # Range-extension note for the canonical study scenario: the last grid row
+    # understates how far the flat-gap region extends. Values are computed,
+    # not hard-coded, so the note stays consistent if the grid changes.
+    if (cfg["lump"] == 80_000 and cfg["annual"] == 8_000
+            and cfg["years"] == 10 and cfg["outside_rate"] == 0.025):
+        def _gap_cross(ra_x):
+            h = frs_headroom(ra_x, frs)
+            s1 = simulate_option1(ra_x, cfg["lump"], cfg["years"],
+                                  cfg["starting_age"])[-1]["ra_total"]
+            s2 = simulate_option2(ra_x, cfg["annual"], cfg["years"],
+                                  cfg["outside_rate"],
+                                  cfg["starting_age"])[-1]["total_value"]
+            return (round(s1 - s2, 2),
+                    crossover_income(s1, s2, option1_relief_amount(cfg["lump"], h),
+                                     option2_relief_schedule(cfg["annual"], h,
+                                                             cfg["years"])))
+        gap52, cross52 = _gap_cross(52_000)
+        gap40, cross40 = _gap_cross(40_000)
+        gap30, cross30 = _gap_cross(30_000)
+        lines.append("")
+        lines.append(f"Beyond the last row, as long as the existing RA stays at least about "
+                     f"$52,000 (headroom up to about $168,400) the gap remains {fmt_signed(gap52)} "
+                     f"and the break-even about ${cross52:,.0f}; below that, top-up dollars "
+                     f"reach the 6%/5% tiers, which widens the gap — e.g. RA $40,000 → gap "
+                     f"{fmt_signed(gap40)}, break-even about ${cross40:,.0f}; RA $30,000 → gap "
+                     f"{fmt_signed(gap30)}, break-even about ${cross30:,.0f}.\n")
     lines.append("")
-    lines.append("![Figure 2 — break-even chargeable income by FRS headroom; the shaded "
+    lines.append("![Figure 1 — break-even chargeable income by FRS headroom; the shaded "
                  "region is where Option 1 wins at all incomes]"
                  "(crossover_by_headroom.png)\n")
     lines.append("")
@@ -657,7 +701,7 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
         lines.append("|--------------|-------------|-------------------|")
         for row in rate_rows:
             lines.append(f"| {row['outside_rate'] * 100:.1f}% | "
-                         f"${row['opt2_total']:,.2f} | ${row['balance_gap']:,.2f} |")
+                         f"${row['opt2_total']:,.2f} | {fmt_signed(row['balance_gap'])} |")
         lines.append("")
         if rate_crossover is None:
             lines.append("**Crossover:** Option 2 does not catch up even at 20% p.a. "
@@ -689,8 +733,10 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
     lines.append("")
     lines.append("**General decision rule (age-55 member, YA 2024+ brackets):**")
     lines.append("")
-    lines.append("1. RA at or above FRS (the standard position for most 55-year-olds): the lump sum "
-                 "wins outright — no relief on either option, and the full amount compounds from Year 1.")
+    lines.append("1. RA at or above FRS (a common position — in 2025, 73.4% of members turning 55 "
+                 "had met the FRS, or the BRS while owning one property, up from 70.5% in 2024; "
+                 "Straits Times, 3 Jul 2026, cited in Table 2): the lump sum wins outright — no "
+                 "relief on either option, and the full amount compounds from Year 1.")
     lines.append("2. RA below FRS: annual top-ups only become competitive at high marginal brackets, "
                  "and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8).")
     lines.append("3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their "
@@ -819,7 +865,7 @@ def main(argv=None):
     print(f"{'=' * 70}")
     print(f"  Option 1 final RA total:      ${o1:>12,.2f}")
     print(f"  Option 2 total value:         ${o2:>12,.2f}")
-    print(f"  Balance gap (1-2):            ${o1 - o2:>12,.2f}")
+    print(f"  Balance gap (1-2):            {fmt_signed(o1 - o2):>14}")
     if cross is None:
         print("  Winner: Option 1 at ALL income levels")
     else:
