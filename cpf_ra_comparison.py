@@ -738,14 +738,56 @@ def generate_report(cfg, opt1, opt2, checks, comparison, sensitivity,
                  "Straits Times, 3 Jul 2026, cited in Table 2): the lump sum wins outright — no "
                  "relief on either option, and the full amount compounds from Year 1.")
     lines.append("2. RA below FRS: annual top-ups only become competitive at high marginal brackets, "
-                 "and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8).")
+                 "and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8); "
+                 "the rising-FRS caveat below affects this rule in practice.")
     lines.append("3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their "
-                 "tax relief (IRAS, from YA 2026); the $2,000/yr matching grant usually beats the "
-                 "relief it displaces.")
+                 "tax relief (IRAS, from YA 2026). The $1/$1 grant beats the relief it displaces "
+                 "(at most about 24c per dollar at the top rate); MRSS itself targets low incomes "
+                 "(average monthly income at most $4,000, at most one property), so it rarely "
+                 "applies in the income band where Option 2 wins.")
     lines.append("")
-    lines.append("*Caveats: constant income over the horizon; no discounting; the outside rate is an "
-                 "assumption, not a guarantee, while the CPF 4% base is a floor; the $80,000 total "
-                 "personal tax-relief cap is ignored; top-ups are irreversible.*")
+    lines.append("**Caveats — simplifications and the direction of each bias.** The model is "
+                 "deliberately simple; the biases below are stated, not quantified, and none "
+                 "changes the broad directions:")
+    lines.append("")
+    lines.append("- **Time value of tax savings:** savings enter at face value, whether they land "
+                 "in Year 1 or Year 10 (no reinvestment, no discounting). The Year-1 relief is "
+                 "equal in both options and cancels; Option 2's *additional* relief arrives in "
+                 "Years 2–10 and would compound to age 65 if reinvested, so time value favors "
+                 "Option 2, if anything — break-evens in Table 7 are, if anything, too high "
+                 "(by the order of a few thousand dollars of income). Neutral for the at-FRS "
+                 "scenario, where neither option earns any relief.")
+    lines.append("- **Outside returns pre-tax:** Option 2's outside pot earns 2.5% with no tax on "
+                 "the interest, while CPF interest is tax-free. At a 24% marginal rate a 2.5% "
+                 "outside instrument nets only about 1.9%, so the 4.00% crossover in Table 8 is "
+                 "optimistic for high-income members — the lump sum is more robust than the "
+                 "table suggests.")
+    lines.append("- **Relief FRS frozen at $220,400:** the relief-applicable FRS is the FRS in "
+                 "force for the YA of the top-up and rises every January (2025: $213,000 → "
+                 "2026: $220,400 → 2027: $228,200, about 3.5%/year). That rise roughly offsets "
+                 "the headroom the $8,000/year top-ups consume, so on the current trajectory "
+                 "most or all of Option 2's top-ups stay relief-eligible where the model counts "
+                 "fewer years — e.g. with $48,000 of initial headroom the model gives 6 relief "
+                 "years; the rising FRS suggests 10. This bias, which favors Option 2, is the "
+                 "largest of the three: the break-evens for $48,000–$72,000 of headroom are, if "
+                 "anything, too high (likely approaching the $87,283 of the $80,000 row, "
+                 "pending the government's future FRS announcements).")
+    lines.append("- **Brackets and income constant** across the decade; the outside rate of 2.5% "
+                 "is an assumption, not a guarantee, while the CPF 4% base is a floor; the "
+                 "$80,000 total personal tax-relief cap is ignored.")
+    lines.append("- **Timing:** a top-up made in calendar year k attracts relief in YA k+1; the "
+                 "model credits the saving in the deposit year. No effect on the nominal totals.")
+    lines.append("- **Horizon stops at age 65:** from 65 the RA converts to CPF LIFE payouts "
+                 "while the outside pot stays liquid and keeps compounding; the comparison "
+                 "values the two as equal at that point. Liquidity preferences, and the "
+                 "irreversibility of top-ups, are not monetised.")
+    lines.append("")
+    lines.append("**Net direction:** the at-FRS headline is untouched by the relief-related "
+                 "biases and strengthened by the pre-tax-outside one — the lump sum is at least "
+                 "as robust as shown. Below FRS, two of the three quantitative biases favor "
+                 "Option 2 (including the largest, the rising FRS) and one favors Option 1, so "
+                 "the reported break-evens are, if anything, too high: Option 2's winning "
+                 "region is, if anything, larger than shown.")
     lines.append("")
     return "\n".join(lines)
 

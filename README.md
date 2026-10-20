@@ -11,7 +11,7 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 **If your RA is already at the FRS — a common position for 55-year-olds: in 2025, 73.4% of members turning 55 had met the FRS, or the BRS while owning one property, up from 70.5% in 2024 ([Straits Times, 3 Jul 2026](https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55)) — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
-**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 1).
+**If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 1; the rising-FRS caveat in report §9 would push these break-evens lower).
 
 ## 2. Options Compared
 
@@ -75,6 +75,7 @@ For headroom beyond about $168,400 (RA below about $52,000), top-up dollars reac
 - Chargeable income constant across all 10 years; no discounting (nominal comparison)
 - Singapore progressive tax brackets (YA 2024 onwards)
 - $80,000 total personal tax-relief cap ignored; MRSS grant interaction noted in the report
+- Bias directions (time value of tax savings, pre-tax outside returns, rising relief FRS, horizon to 65): report §9 — net, the at-FRS result is at least as robust as shown; the below-FRS break-evens are, if anything, too high
 
 Second-level detail — year-by-year balances, closed-form verification, per-bracket tax tables, the outside-rate sweep — is in [the full report](cpf_ra_comparison_report.md) (§5–§8).
 
