@@ -77,11 +77,21 @@ For headroom beyond $168,400 (RA below $52,000), top-up dollars reach the prefer
 - Chargeable income constant across all 10 years; no discounting (nominal comparison)
 - Singapore progressive tax brackets (YA 2024 onwards)
 - $80,000 total personal tax-relief cap ignored; MRSS grant interaction noted in the report
-- Bias directions (time value of tax savings, pre-tax outside returns, rising relief FRS, horizon to 65): report §9 — net, the at-FRS result is at least as robust as shown; the below-FRS break-evens are, if anything, too high
 
 Second-level detail — year-by-year balances, closed-form verification, per-bracket tax tables, the outside-rate sweep — is in [the full report](cpf_ra_comparison_report.md) (§5–§8).
 
-## 5. Files
+## 5. Caveats — which way the simplifications push
+
+The model is deliberately simple, and each simplification below pushes the comparison in a known direction. None overturns the broad picture, but they matter for how far to trust the exact numbers (full treatment: report §9).
+
+- **Tax savings are counted at face value** — no compounding, no discounting. Option 2's savings arrive in Years 2–10, so reinvested they would grow by age 65: Option 2 is, if anything, stronger than shown, i.e. the true break-evens in Table 3 are likely a bit lower than printed. The at-FRS case is unaffected, since neither option earns any relief.
+- **The outside pot's 2.5% is modelled pre-tax.** CPF interest is tax-free; the outside pot's is not. A high-bracket member's 2.5% outside investment nets only about 1.9% after tax, so the 4.00% crossover in Key Result 1 is optimistic for high earners — the lump sum is, if anything, more robust than shown.
+- **The relief-applicable FRS is frozen at $220,400.** In reality it rises every January (about 3.5%/year: $213,000 in 2025 → $220,400 in 2026 → $228,200 in 2027). That rise nearly offsets the $8,000/yr headroom drain, so members with $48,000–$72,000 of headroom likely keep relief on all 10 years of top-ups rather than the 6–9 the model counts. This is the largest bias, and it pushes the Table 3 break-evens down as well.
+- **The model stops at age 65.** After 65 the RA converts to CPF LIFE payouts while the outside pot stays liquid, and top-ups are irreversible. These are real considerations the numbers do not capture.
+
+**Net effect:** the at-FRS headline is at least as robust as shown; the below-FRS break-evens are, if anything, too high — Option 2's winning region is, if anything, larger than shown.
+
+## 6. Files
 
 Usage examples for both scripts live in their docstrings (or run either with `--help`).
 
@@ -91,7 +101,7 @@ Usage examples for both scripts live in their docstrings (or run either with `--
 - [`crossover_by_headroom.png`](crossover_by_headroom.png) — Figure 1: break-even chargeable income by FRS headroom
 - [`research_findings.md`](research_findings.md) — IRAS/CPF source research
 
-## 6. Sources
+## 7. Sources
 
 - [IRAS Individual Income Tax Rates](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates)
 - [IRAS CPF Cash Top-up Relief (incl. FRS limit on relief)](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief)
