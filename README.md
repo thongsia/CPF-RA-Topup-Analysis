@@ -52,7 +52,7 @@ Top-up dollars earn a flat 4% in both options, and **no tax relief attaches to e
 
 ### Key Result 2 — RA below FRS: break-even income $87,283–$287,587 depending on headroom (Option 1 wins below it, Option 2 above it)
 
-With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows (Table 3):
+With the RA below the FRS, annual top-ups earn up to 10 years of tax relief that the lump sum never gets (relief attaches only while top-ups fill the gap to FRS). The winner now depends on income, and the break-even income falls as the headroom to FRS grows (Table 3, Figure 1):
 
 **Table 3: Break-even chargeable income by FRS headroom**
 
