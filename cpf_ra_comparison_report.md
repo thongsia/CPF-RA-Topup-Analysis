@@ -37,6 +37,7 @@ All parameters come from official IRAS / CPF Board sources, plus the two statist
 | IRAS Individual Income Tax Rates | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates |
 | IRAS CPF Cash Top-up Relief (incl. FRS limit on relief) | https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief |
 | CPF Board RA top-ups (ERS cap, additional interest) | https://www.cpf.gov.sg/member/growing-your-savings/saving-more-with-cpf/top-up-to-enjoy-higher-retirement-payouts |
+| CPF Board MRSS eligibility (RA below BRS, income and property criteria) | https://www.cpf.gov.sg/member/growing-your-savings/government-support/matching-grant-for-retirement |
 | Straits Times, 'More hit CPF retirement targets at 55' (3 Jul 2026) — 73.4% of 2025's 55-year-olds met the FRS or the BRS with one property, up from 70.5% in 2024 | https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55 |
 | MOM written reply to Parliamentary Question (Feb 2023) — about 33% of active members turning 55 in 2022 had not set aside the FRS in cash | https://www.mom.gov.sg/newsroom/parliament-questions-and-replies/2023/0222-written-answer-to-pq-on-data-on-cpf-members-who-are-unable-to-set-aside-cpf-frs |
 
@@ -197,7 +198,7 @@ The balance gap above assumes the simulated outside rate (2.5% p.a. on Option 2'
 
 1. RA at or above FRS (a common position — in 2025, 73.4% of members turning 55 had met the FRS, or the BRS while owning one property, up from 70.5% in 2024; Straits Times, 3 Jul 2026, cited in Table 2): the lump sum wins outright — no relief on either option, and the full amount compounds from Year 1.
 2. RA below FRS: annual top-ups only become competitive at high marginal brackets, and only if enough of the 10 years of $8,000 relief stay below FRS. See Table 7 (§8); the rising-FRS caveat below affects this rule in practice.
-3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their tax relief (IRAS, from YA 2026). The $1/$1 grant beats the relief it displaces (at most about 24c per dollar at the top rate); MRSS itself targets low incomes (average monthly income at most $4,000, at most one property), so it rarely applies in the income band where Option 2 wins.
+3. Check MRSS eligibility before choosing: grant-attracting top-ups lose their tax relief (IRAS, from YA 2026). The $1/$1 grant beats the relief it displaces (at most about 24c per dollar at the top rate). MRSS requires an RA strictly below the BRS, average monthly income at most $4,000, residence annual value at most $21,000, at most one property, and Singapore citizenship (CPF Board) — it targets low incomes, so it rarely applies in the income band where Option 2 wins; a member at exactly the BRS is not eligible.
 
 **Caveats — simplifications and the direction of each bias.** The model is deliberately simple; the biases below are stated, not quantified, and none changes the broad directions:
 
