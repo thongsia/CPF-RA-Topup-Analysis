@@ -11,7 +11,7 @@ _This README is the executive summary and stands on its own. The detail behind t
 
 ## 1. Short Answer
 
-**If your RA is already at the FRS — a common position for 55-year-olds: in 2025, 73.4% of members turning 55 had met the FRS, or the BRS while owning one property, up from 70.5% in 2024 ([Straits Times, 3 Jul 2026](https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55)) — put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
+**If your RA is already at the FRS, put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
 **If your RA is still below the FRS, the answer depends on your income.** Annual top-ups earn up to 10 years of tax relief the lump sum never gets, so at high enough income they win; the break-even income falls as your headroom to FRS grows (Table 3, Figure 1; the rising-FRS caveat in report §9 would push these break-evens lower).
 
@@ -73,7 +73,7 @@ Worked example for a specific balance: the case study in Section 4 (member at th
 
 ## 4. Case Study — at the BRS with one property pledged (age 55)
 
-A member who turns 55 in 2026 and pledges a Singapore property (remaining lease to at least age 95) sets aside only the BRS: RA = $110,200, headroom to FRS = $110,200. This "BRS with property" position is part of the majority cited in Section 1 (73.4% of 2025's 55-year-olds met the FRS, or the BRS with one property).
+A member who turns 55 in 2026 and pledges a Singapore property (remaining lease to at least age 95) sets aside only the BRS: RA = $110,200, headroom to FRS = $110,200. This is a common position: of the 41,000 active members who turned 55 in 2025, 73.4% had met the BRS or higher — in cash, or with one property pledged — up from 70.5% in 2024 ([Straits Times, 3 Jul 2026](https://www.straitstimes.com/business/more-hitting-cpf-retirement-targets-at-the-milestone-age-of-55)).
 
 Running the model on this balance (`python3 cpf_ra_comparison.py --ra-balance 110200`) lands on the break-even plateau of Table 3:
 
