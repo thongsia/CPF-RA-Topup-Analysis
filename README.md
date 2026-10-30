@@ -9,7 +9,7 @@ A 55-year-old has **$80,000** to put into the CPF Retirement Account (RA) over t
 
 _This README is the executive summary and stands on its own. The detail behind the numbers — derivations, year-by-year balances, full tables, the outside-rate sweep, and the caveats — is in [the full report](cpf_ra_comparison_report.md), which `cpf_ra_comparison.py` regenerates; "report §N" references below point to sections of that file._
 
-## 1. Short Answer
+## 1. TL;DR
 
 **If your RA is already at the FRS, put the full $80,000 in now (lump sum).** It beats the $8,000/year schedule at *every* income level, by **$7,989.70** over 10 years. With the RA at FRS, no top-up earns tax relief at all, so the decision is pure interest: the lump sum compounds at 4% for the full decade, while each year's $8,000 is split between the RA and a pot parked outside at an assumed 2.5%. The result holds for any outside rate below **4.00%** — the rate the top-up itself earns in the RA, so Option 2 wins only if the parked money credibly out-earns the government-guaranteed CPF base.
 
